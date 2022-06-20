@@ -56,11 +56,12 @@ func testUssingLog() error {
 func testOpaqueError() error {
 	err := testOpaquerErrorStacktrace()
 	if err != nil {
+		//this is doing a wrapping of the error
 		return fmt.Errorf("adding stacktrace: %w", err)
 	}
 	return nil
 }
 
 func testOpaquerErrorStacktrace() error {
-	return errors.New("testOpaquerErrorStacktrace")
+	return errors.New("ERROR testOpaquerErrorStacktrace blah blah")
 }
